@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/samuelemerite/VotingApp#readme",
   "dependencies": {
-    "express": "^5.1.0"
+    "axios": "^1.9.0",
+    "express": "^5.1.0",
+    "react-router-dom": "^7.5.2"
   }
 }
