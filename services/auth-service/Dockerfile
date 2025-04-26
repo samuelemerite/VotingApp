@@ -2,7 +2,7 @@
 FROM node:18-alpine
 
 # Création et configuration du répertoire de travail
-WORKDIR /app
+WORKDIR /
 
 # Copie des fichiers de configuration d'abord pour optimiser le cache
 COPY package*.json ./
@@ -13,7 +13,5 @@ RUN npm install
 # Copie du reste de l'application
 COPY . .
 
-
-
 # Commande de démarrage
-CMD ["npm", "start"]
+CMD ["node", "src/index.js"]
