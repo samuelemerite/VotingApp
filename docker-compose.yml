@@ -1,4 +1,4 @@
-version: '3.8'
+# version: '3.8'
 
 services:
   user-service:
@@ -16,38 +16,38 @@ services:
     networks:
       - app-network
 
-  vote-service:
-    build:
-      context: ./services/vote-service
-    environment:
-      - DB_HOST=mysql
-      - DB_USER=root
-      - DB_PASSWORD=root
-      - DB_NAME=voting_app
-    ports:
-      - "3003:3000"
-    depends_on:
-      - mysql
-    networks:
-      - app-network
+  # vote-service:
+  #   build:
+  #     context: ./services/vote-service
+  #   environment:
+  #     - DB_HOST=mysql
+  #     - DB_USER=root
+  #     - DB_PASSWORD=root
+  #     - DB_NAME=voting_app
+  #   ports:
+  #     - "3003:3000"
+  #   depends_on:
+  #     - mysql
+  #   networks:
+  #     - app-network
 
-  result-service:
-    build:
-      context: ./services/result-service
-    environment:
-      - DB_HOST=mysql
-      - DB_USER=root
-      - DB_PASSWORD=root
-      - DB_NAME=voting_app
-    ports:
-      - "3004:3000"
-    depends_on:
-      - mysql
-    networks:
-      - app-network
+  # result-service:
+  #   build:
+  #     context: ./services/result-service
+  #   environment:
+  #     - DB_HOST=mysql
+  #     - DB_USER=root
+  #     - DB_PASSWORD=root
+  #     - DB_NAME=voting_app
+  #   ports:
+  #     - "3004:3000"
+  #   depends_on:
+  #     - mysql
+  #   networks:
+  #     - app-network
 
   mysql:
-    image: mysql:8.0
+    image: mysql
     restart: always
     environment:
       - MYSQL_ROOT_PASSWORD=root
