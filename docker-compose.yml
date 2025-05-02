@@ -5,6 +5,7 @@ services:
     build:
       context: ./services/auth-service
     environment:
+      - PORT=3000
       - DB_HOST=mysql
       - DB_USER=root
       - DB_PASSWORD=root
