@@ -1,8 +1,9 @@
-# Utilisation d'une image Node.js officielle (préférer une version stable)
+
+# Utilisation d'une image Node.js officielle
 FROM node:18-alpine
 
 # Création et configuration du répertoire de travail
-WORKDIR /src
+WORKDIR /app
 
 # Copie des fichiers de configuration d'abord pour optimiser le cache
 COPY package*.json ./
@@ -13,7 +14,8 @@ RUN npm install
 # Copie du reste de l'application
 COPY . .
 
-
+# Exposition du port
+EXPOSE 3367
 
 # Commande de démarrage
-CMD ["npm", "start"]
+CMD ["node", "src/index.js"]
